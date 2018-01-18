@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBA751F020103662001DAFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751EF20103662001DAFB7 /* AppDelegate.swift */; };
+		BBA751F220103662001DAFB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F120103662001DAFB7 /* ViewController.swift */; };
+		BBA751F520103662001DAFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA751F320103662001DAFB7 /* Main.storyboard */; };
+		BBA751F820103662001DAFB7 /* Adventurlog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F620103662001DAFB7 /* Adventurlog.xcdatamodeld */; };
+		BBA751FA20103662001DAFB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA751F920103662001DAFB7 /* Assets.xcassets */; };
+		BBA751FD20103662001DAFB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA751FB20103662001DAFB7 /* LaunchScreen.storyboard */; };
+		BBA7520820103662001DAFB7 /* AdventurlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA7520720103662001DAFB7 /* AdventurlogTests.swift */; };
+		BBA7521320103662001DAFB7 /* AdventurlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA7521220103662001DAFB7 /* AdventurlogUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBA7520420103662001DAFB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBA751E420103662001DAFB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBA751EB20103662001DAFB7;
+			remoteInfo = Adventurlog;
+		};
+		BBA7520F20103662001DAFB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBA751E420103662001DAFB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBA751EB20103662001DAFB7;
+			remoteInfo = Adventurlog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBA751EC20103662001DAFB7 /* Adventurlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adventurlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA751EF20103662001DAFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BBA751F120103662001DAFB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBA751F420103662001DAFB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BBA751F720103662001DAFB7 /* Adventurlog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Adventurlog.xcdatamodel; sourceTree = "<group>"; };
+		BBA751F920103662001DAFB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BBA751FC20103662001DAFB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BBA751FE20103662001DAFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA7520320103662001DAFB7 /* AdventurlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventurlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA7520720103662001DAFB7 /* AdventurlogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventurlogTests.swift; sourceTree = "<group>"; };
+		BBA7520920103662001DAFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA7520E20103662001DAFB7 /* AdventurlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventurlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBA7521220103662001DAFB7 /* AdventurlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventurlogUITests.swift; sourceTree = "<group>"; };
+		BBA7521420103662001DAFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBA751E920103662001DAFB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA7520020103662001DAFB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA7520B20103662001DAFB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBA751E320103662001DAFB7 = {
+			isa = PBXGroup;
+			children = (
+				BBA751EE20103662001DAFB7 /* Adventurlog */,
+				BBA7520620103662001DAFB7 /* AdventurlogTests */,
+				BBA7521120103662001DAFB7 /* AdventurlogUITests */,
+				BBA751ED20103662001DAFB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBA751ED20103662001DAFB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBA751EC20103662001DAFB7 /* Adventurlog.app */,
+				BBA7520320103662001DAFB7 /* AdventurlogTests.xctest */,
+				BBA7520E20103662001DAFB7 /* AdventurlogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBA751EE20103662001DAFB7 /* Adventurlog */ = {
+			isa = PBXGroup;
+			children = (
+				BBA751EF20103662001DAFB7 /* AppDelegate.swift */,
+				BBA751F120103662001DAFB7 /* ViewController.swift */,
+				BBA751F320103662001DAFB7 /* Main.storyboard */,
+				BBA751F920103662001DAFB7 /* Assets.xcassets */,
+				BBA751FB20103662001DAFB7 /* LaunchScreen.storyboard */,
+				BBA751FE20103662001DAFB7 /* Info.plist */,
+				BBA751F620103662001DAFB7 /* Adventurlog.xcdatamodeld */,
+			);
+			path = Adventurlog;
+			sourceTree = "<group>";
+		};
+		BBA7520620103662001DAFB7 /* AdventurlogTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBA7520720103662001DAFB7 /* AdventurlogTests.swift */,
+				BBA7520920103662001DAFB7 /* Info.plist */,
+			);
+			path = AdventurlogTests;
+			sourceTree = "<group>";
+		};
+		BBA7521120103662001DAFB7 /* AdventurlogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BBA7521220103662001DAFB7 /* AdventurlogUITests.swift */,
+				BBA7521420103662001DAFB7 /* Info.plist */,
+			);
+			path = AdventurlogUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBA751EB20103662001DAFB7 /* Adventurlog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBA7521720103662001DAFB7 /* Build configuration list for PBXNativeTarget "Adventurlog" */;
+			buildPhases = (
+				BBA751E820103662001DAFB7 /* Sources */,
+				BBA751E920103662001DAFB7 /* Frameworks */,
+				BBA751EA20103662001DAFB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Adventurlog;
+			productName = Adventurlog;
+			productReference = BBA751EC20103662001DAFB7 /* Adventurlog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBA7520220103662001DAFB7 /* AdventurlogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBA7521A20103662001DAFB7 /* Build configuration list for PBXNativeTarget "AdventurlogTests" */;
+			buildPhases = (
+				BBA751FF20103662001DAFB7 /* Sources */,
+				BBA7520020103662001DAFB7 /* Frameworks */,
+				BBA7520120103662001DAFB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBA7520520103662001DAFB7 /* PBXTargetDependency */,
+			);
+			name = AdventurlogTests;
+			productName = AdventurlogTests;
+			productReference = BBA7520320103662001DAFB7 /* AdventurlogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BBA7520D20103662001DAFB7 /* AdventurlogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBA7521D20103662001DAFB7 /* Build configuration list for PBXNativeTarget "AdventurlogUITests" */;
+			buildPhases = (
+				BBA7520A20103662001DAFB7 /* Sources */,
+				BBA7520B20103662001DAFB7 /* Frameworks */,
+				BBA7520C20103662001DAFB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBA7521020103662001DAFB7 /* PBXTargetDependency */,
+			);
+			name = AdventurlogUITests;
+			productName = AdventurlogUITests;
+			productReference = BBA7520E20103662001DAFB7 /* AdventurlogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBA751E420103662001DAFB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Todd Isaacs";
+				TargetAttributes = {
+					BBA751EB20103662001DAFB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					BBA7520220103662001DAFB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BBA751EB20103662001DAFB7;
+					};
+					BBA7520D20103662001DAFB7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BBA751EB20103662001DAFB7;
+					};
+				};
+			};
+			buildConfigurationList = BBA751E720103662001DAFB7 /* Build configuration list for PBXProject "Adventurlog" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBA751E320103662001DAFB7;
+			productRefGroup = BBA751ED20103662001DAFB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBA751EB20103662001DAFB7 /* Adventurlog */,
+				BBA7520220103662001DAFB7 /* AdventurlogTests */,
+				BBA7520D20103662001DAFB7 /* AdventurlogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBA751EA20103662001DAFB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA751FD20103662001DAFB7 /* LaunchScreen.storyboard in Resources */,
+				BBA751FA20103662001DAFB7 /* Assets.xcassets in Resources */,
+				BBA751F520103662001DAFB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA7520120103662001DAFB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA7520C20103662001DAFB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBA751E820103662001DAFB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA751F220103662001DAFB7 /* ViewController.swift in Sources */,
+				BBA751F820103662001DAFB7 /* Adventurlog.xcdatamodeld in Sources */,
+				BBA751F020103662001DAFB7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA751FF20103662001DAFB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA7520820103662001DAFB7 /* AdventurlogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBA7520A20103662001DAFB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA7521320103662001DAFB7 /* AdventurlogUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBA7520520103662001DAFB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBA751EB20103662001DAFB7 /* Adventurlog */;
+			targetProxy = BBA7520420103662001DAFB7 /* PBXContainerItemProxy */;
+		};
+		BBA7521020103662001DAFB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBA751EB20103662001DAFB7 /* Adventurlog */;
+			targetProxy = BBA7520F20103662001DAFB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBA751F320103662001DAFB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBA751F420103662001DAFB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BBA751FB20103662001DAFB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBA751FC20103662001DAFB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBA7521520103662001DAFB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BBA7521620103662001DAFB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBA7521820103662001DAFB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Adventurlog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.Adventurlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BBA7521920103662001DAFB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Adventurlog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.Adventurlog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BBA7521B20103662001DAFB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdventurlogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.AdventurlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adventurlog.app/Adventurlog";
+			};
+			name = Debug;
+		};
+		BBA7521C20103662001DAFB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdventurlogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.AdventurlogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Adventurlog.app/Adventurlog";
+			};
+			name = Release;
+		};
+		BBA7521E20103662001DAFB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdventurlogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.AdventurlogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Adventurlog;
+			};
+			name = Debug;
+		};
+		BBA7521F20103662001DAFB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AdventurlogUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.AdventurlogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Adventurlog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBA751E720103662001DAFB7 /* Build configuration list for PBXProject "Adventurlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA7521520103662001DAFB7 /* Debug */,
+				BBA7521620103662001DAFB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBA7521720103662001DAFB7 /* Build configuration list for PBXNativeTarget "Adventurlog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA7521820103662001DAFB7 /* Debug */,
+				BBA7521920103662001DAFB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBA7521A20103662001DAFB7 /* Build configuration list for PBXNativeTarget "AdventurlogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA7521B20103662001DAFB7 /* Debug */,
+				BBA7521C20103662001DAFB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBA7521D20103662001DAFB7 /* Build configuration list for PBXNativeTarget "AdventurlogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBA7521E20103662001DAFB7 /* Debug */,
+				BBA7521F20103662001DAFB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BBA751F620103662001DAFB7 /* Adventurlog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BBA751F720103662001DAFB7 /* Adventurlog.xcdatamodel */,
+			);
+			currentVersion = BBA751F720103662001DAFB7 /* Adventurlog.xcdatamodel */;
+			path = Adventurlog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BBA751E420103662001DAFB7 /* Project object */;
+}
