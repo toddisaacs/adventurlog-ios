@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		BBA751F020103662001DAFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751EF20103662001DAFB7 /* AppDelegate.swift */; };
-		BBA751F220103662001DAFB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F120103662001DAFB7 /* ViewController.swift */; };
+		BBA751F220103662001DAFB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F120103662001DAFB7 /* SearchViewController.swift */; };
 		BBA751F520103662001DAFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA751F320103662001DAFB7 /* Main.storyboard */; };
 		BBA751F820103662001DAFB7 /* Adventurlog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F620103662001DAFB7 /* Adventurlog.xcdatamodeld */; };
 		BBA751FA20103662001DAFB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA751F920103662001DAFB7 /* Assets.xcassets */; };
 		BBA751FD20103662001DAFB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA751FB20103662001DAFB7 /* LaunchScreen.storyboard */; };
 		BBA7520820103662001DAFB7 /* AdventurlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA7520720103662001DAFB7 /* AdventurlogTests.swift */; };
 		BBA7521320103662001DAFB7 /* AdventurlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA7521220103662001DAFB7 /* AdventurlogUITests.swift */; };
+		BBA752252010413E001DAFB7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA752242010413E001DAFB7 /* Track.swift */; };
+		BBA7522720104180001DAFB7 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA7522620104180001DAFB7 /* QueryService.swift */; };
+		BBA75229201042B8001DAFB7 /* SearchVC+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA75228201042B8001DAFB7 /* SearchVC+SearchBarDelegate.swift */; };
+		BBA7522B201043FE001DAFB7 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA7522A201043FE001DAFB7 /* TrackCell.swift */; };
+		BBA7522D2010442D001DAFB7 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA7522C2010442D001DAFB7 /* DownloadService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +42,7 @@
 /* Begin PBXFileReference section */
 		BBA751EC20103662001DAFB7 /* Adventurlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adventurlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA751EF20103662001DAFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BBA751F120103662001DAFB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BBA751F120103662001DAFB7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BBA751F420103662001DAFB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBA751F720103662001DAFB7 /* Adventurlog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Adventurlog.xcdatamodel; sourceTree = "<group>"; };
 		BBA751F920103662001DAFB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +54,11 @@
 		BBA7520E20103662001DAFB7 /* AdventurlogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventurlogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA7521220103662001DAFB7 /* AdventurlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventurlogUITests.swift; sourceTree = "<group>"; };
 		BBA7521420103662001DAFB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBA752242010413E001DAFB7 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		BBA7522620104180001DAFB7 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
+		BBA75228201042B8001DAFB7 /* SearchVC+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+SearchBarDelegate.swift"; sourceTree = "<group>"; };
+		BBA7522A201043FE001DAFB7 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		BBA7522C2010442D001DAFB7 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +109,11 @@
 		BBA751EE20103662001DAFB7 /* Adventurlog */ = {
 			isa = PBXGroup;
 			children = (
+				BBA75223201036BA001DAFB7 /* controller */,
+				BBA75222201036B0001DAFB7 /* networking */,
+				BBA75221201036AA001DAFB7 /* model */,
+				BBA75220201036A3001DAFB7 /* view */,
 				BBA751EF20103662001DAFB7 /* AppDelegate.swift */,
-				BBA751F120103662001DAFB7 /* ViewController.swift */,
 				BBA751F320103662001DAFB7 /* Main.storyboard */,
 				BBA751F920103662001DAFB7 /* Assets.xcassets */,
 				BBA751FB20103662001DAFB7 /* LaunchScreen.storyboard */,
@@ -126,6 +139,40 @@
 				BBA7521420103662001DAFB7 /* Info.plist */,
 			);
 			path = AdventurlogUITests;
+			sourceTree = "<group>";
+		};
+		BBA75220201036A3001DAFB7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BBA7522A201043FE001DAFB7 /* TrackCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BBA75221201036AA001DAFB7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BBA752242010413E001DAFB7 /* Track.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BBA75222201036B0001DAFB7 /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				BBA7522620104180001DAFB7 /* QueryService.swift */,
+				BBA7522C2010442D001DAFB7 /* DownloadService.swift */,
+			);
+			path = networking;
+			sourceTree = "<group>";
+		};
+		BBA75223201036BA001DAFB7 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBA751F120103662001DAFB7 /* SearchViewController.swift */,
+				BBA75228201042B8001DAFB7 /* SearchVC+SearchBarDelegate.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBA751F220103662001DAFB7 /* ViewController.swift in Sources */,
+				BBA7522B201043FE001DAFB7 /* TrackCell.swift in Sources */,
+				BBA7522D2010442D001DAFB7 /* DownloadService.swift in Sources */,
+				BBA751F220103662001DAFB7 /* SearchViewController.swift in Sources */,
 				BBA751F820103662001DAFB7 /* Adventurlog.xcdatamodeld in Sources */,
+				BBA7522720104180001DAFB7 /* QueryService.swift in Sources */,
 				BBA751F020103662001DAFB7 /* AppDelegate.swift in Sources */,
+				BBA75229201042B8001DAFB7 /* SearchVC+SearchBarDelegate.swift in Sources */,
+				BBA752252010413E001DAFB7 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C759Q4CFH;
 				INFOPLIST_FILE = Adventurlog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.Adventurlog;
@@ -445,6 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9C759Q4CFH;
 				INFOPLIST_FILE = Adventurlog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adventurlog.Adventurlog;
