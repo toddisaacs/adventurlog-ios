@@ -14,12 +14,13 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     lazy var tapRecognizer: UITapGestureRecognizer = {
         var recognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
         return recognizer
     }()
     
-    var searchResults: [Track] = []
+    var searchResults: [Adventure] = []
     let queryService = QueryService()
     let downloadService = DownloadService()
     
@@ -59,7 +60,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.delegate = self
         
         let track = searchResults[indexPath.row]
-        cell.configure(track: track, downloaded: track.downloaded)
+        cell.configure(track: track)
         
         return cell
     }
@@ -70,10 +71,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     // When user taps cell, play the local file, if it's downloaded
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let track = searchResults[indexPath.row]
-        if track.downloaded {
-            playDownload(track)
-        }
+       // let track = searchResults[indexPath.row]
+//        if track.downloaded {
+//            playDownload(track)
+//        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -85,32 +86,32 @@ extension SearchViewController: TrackCellDelegate {
     
     func downloadTapped(_ cell: TrackCell) {
         if let indexPath = tableView.indexPath(for: cell) {
-            let track = searchResults[indexPath.row]
-            downloadService.startDownload(track)
+            //let adventure = searchResults[indexPath.row]
+            //downloadService.startDownload(track)
             reload(indexPath.row)
         }
     }
     
     func pauseTapped(_ cell: TrackCell) {
         if let indexPath = tableView.indexPath(for: cell) {
-            let track = searchResults[indexPath.row]
-            downloadService.pauseDownload(track)
+            //let adventure = searchResults[indexPath.row]
+            //downloadService.pauseDownload(track)
             reload(indexPath.row)
         }
     }
     
     func resumeTapped(_ cell: TrackCell) {
         if let indexPath = tableView.indexPath(for: cell) {
-            let track = searchResults[indexPath.row]
-            downloadService.resumeDownload(track)
+            //let adventure = searchResults[indexPath.row]
+            //downloadService.resumeDownload(track)
             reload(indexPath.row)
         }
     }
     
     func cancelTapped(_ cell: TrackCell) {
         if let indexPath = tableView.indexPath(for: cell) {
-            let track = searchResults[indexPath.row]
-            downloadService.cancelDownload(track)
+            //let adventure = searchResults[indexPath.row]
+            //downloadService.cancelDownload(track)
             reload(indexPath.row)
         }
     }

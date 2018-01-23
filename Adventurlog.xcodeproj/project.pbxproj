@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1B88562016A97A0073AD69 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B88552016A97A0073AD69 /* Adventure.swift */; };
+		BB1B885820177EC50073AD69 /* Placemarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B885720177EC50073AD69 /* Placemarker.swift */; };
+		BB1B885A201783030073AD69 /* Formatter+iso8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B8859201783030073AD69 /* Formatter+iso8601.swift */; };
 		BBA751F020103662001DAFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751EF20103662001DAFB7 /* AppDelegate.swift */; };
 		BBA751F220103662001DAFB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F120103662001DAFB7 /* SearchViewController.swift */; };
 		BBA751F520103662001DAFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA751F320103662001DAFB7 /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB1B88552016A97A0073AD69 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
+		BB1B885720177EC50073AD69 /* Placemarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemarker.swift; sourceTree = "<group>"; };
+		BB1B8859201783030073AD69 /* Formatter+iso8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+iso8601.swift"; sourceTree = "<group>"; };
 		BBA751EC20103662001DAFB7 /* Adventurlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adventurlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA751EF20103662001DAFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA751F120103662001DAFB7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 				BBA751FB20103662001DAFB7 /* LaunchScreen.storyboard */,
 				BBA751FE20103662001DAFB7 /* Info.plist */,
 				BBA751F620103662001DAFB7 /* Adventurlog.xcdatamodeld */,
+				BB1B8859201783030073AD69 /* Formatter+iso8601.swift */,
 			);
 			path = Adventurlog;
 			sourceTree = "<group>";
@@ -153,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				BBA752242010413E001DAFB7 /* Track.swift */,
+				BB1B88552016A97A0073AD69 /* Adventure.swift */,
+				BB1B885720177EC50073AD69 /* Placemarker.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -310,7 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA7522B201043FE001DAFB7 /* TrackCell.swift in Sources */,
+				BB1B88562016A97A0073AD69 /* Adventure.swift in Sources */,
 				BBA7522D2010442D001DAFB7 /* DownloadService.swift in Sources */,
+				BB1B885A201783030073AD69 /* Formatter+iso8601.swift in Sources */,
+				BB1B885820177EC50073AD69 /* Placemarker.swift in Sources */,
 				BBA751F220103662001DAFB7 /* SearchViewController.swift in Sources */,
 				BBA751F820103662001DAFB7 /* Adventurlog.xcdatamodeld in Sources */,
 				BBA7522720104180001DAFB7 /* QueryService.swift in Sources */,

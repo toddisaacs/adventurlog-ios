@@ -45,7 +45,7 @@ class TrackCell: UITableViewCell {
         delegate?.downloadTapped(self)
     }
     
-    func configure(track: Track, downloaded: Bool) {
+    func configure(track: Adventure) {
         titleLabel.text = track.name
         //artistLabel.text = track.artist
         
@@ -55,7 +55,7 @@ class TrackCell: UITableViewCell {
         // TODO
         
         // If the track is already downloaded, enable cell selection and hide the Download button
-        selectionStyle = downloaded ? UITableViewCellSelectionStyle.gray : UITableViewCellSelectionStyle.none
+        //selectionStyle = downloaded ? UITableViewCellSelectionStyle.gray : UITableViewCellSelectionStyle.none
       //  downloadButton.isHidden = downloaded
     }
     
