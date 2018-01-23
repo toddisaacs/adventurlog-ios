@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7164984F1699BD3A33267BFA /* libPods-Adventurlog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BACC5CD83F0CC759A0341 /* libPods-Adventurlog.a */; };
 		BB1B88562016A97A0073AD69 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B88552016A97A0073AD69 /* Adventure.swift */; };
 		BB1B885820177EC50073AD69 /* Placemarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B885720177EC50073AD69 /* Placemarker.swift */; };
 		BB1B885A201783030073AD69 /* Formatter+iso8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B8859201783030073AD69 /* Formatter+iso8601.swift */; };
+		BB1B885C2017A25E0073AD69 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BB1B885B2017A25E0073AD69 /* Podfile */; };
 		BBA751F020103662001DAFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751EF20103662001DAFB7 /* AppDelegate.swift */; };
 		BBA751F220103662001DAFB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F120103662001DAFB7 /* SearchViewController.swift */; };
 		BBA751F520103662001DAFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA751F320103662001DAFB7 /* Main.storyboard */; };
@@ -43,9 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62A6A9BA07F88F56B5AF920E /* Pods-Adventurlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adventurlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adventurlog/Pods-Adventurlog.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1B88552016A97A0073AD69 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
 		BB1B885720177EC50073AD69 /* Placemarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemarker.swift; sourceTree = "<group>"; };
 		BB1B8859201783030073AD69 /* Formatter+iso8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+iso8601.swift"; sourceTree = "<group>"; };
+		BB1B885B2017A25E0073AD69 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		BBA751EC20103662001DAFB7 /* Adventurlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adventurlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA751EF20103662001DAFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA751F120103662001DAFB7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 		BBA75228201042B8001DAFB7 /* SearchVC+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+SearchBarDelegate.swift"; sourceTree = "<group>"; };
 		BBA7522A201043FE001DAFB7 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		BBA7522C2010442D001DAFB7 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
+		C02E5F90B2C13F2C48144AB9 /* Pods-Adventurlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adventurlog.release.xcconfig"; path = "Pods/Target Support Files/Pods-Adventurlog/Pods-Adventurlog.release.xcconfig"; sourceTree = "<group>"; };
+		FB0BACC5CD83F0CC759A0341 /* libPods-Adventurlog.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Adventurlog.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7164984F1699BD3A33267BFA /* libPods-Adventurlog.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,13 +99,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9AEC8EDCC9E0077CE167C47A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BACC5CD83F0CC759A0341 /* libPods-Adventurlog.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5BC06465C94A52624D236E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62A6A9BA07F88F56B5AF920E /* Pods-Adventurlog.debug.xcconfig */,
+				C02E5F90B2C13F2C48144AB9 /* Pods-Adventurlog.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BBA751E320103662001DAFB7 = {
 			isa = PBXGroup;
 			children = (
+				BB1B885B2017A25E0073AD69 /* Podfile */,
 				BBA751EE20103662001DAFB7 /* Adventurlog */,
 				BBA7520620103662001DAFB7 /* AdventurlogTests */,
 				BBA7521120103662001DAFB7 /* AdventurlogUITests */,
 				BBA751ED20103662001DAFB7 /* Products */,
+				A5BC06465C94A52624D236E6 /* Pods */,
+				9AEC8EDCC9E0077CE167C47A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBA7521720103662001DAFB7 /* Build configuration list for PBXNativeTarget "Adventurlog" */;
 			buildPhases = (
+				AF562E6C1D8C3DB33893F857 /* [CP] Check Pods Manifest.lock */,
 				BBA751E820103662001DAFB7 /* Sources */,
 				BBA751E920103662001DAFB7 /* Frameworks */,
 				BBA751EA20103662001DAFB7 /* Resources */,
+				CE7A7201603517ED44087F53 /* [CP] Embed Pods Frameworks */,
+				8116238F9DEE8CC80ACF71B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +323,7 @@
 			files = (
 				BBA751FD20103662001DAFB7 /* LaunchScreen.storyboard in Resources */,
 				BBA751FA20103662001DAFB7 /* Assets.xcassets in Resources */,
+				BB1B885C2017A25E0073AD69 /* Podfile in Resources */,
 				BBA751F520103662001DAFB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +343,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8116238F9DEE8CC80ACF71B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Adventurlog/Pods-Adventurlog-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Adventurlog/Pods-Adventurlog-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF562E6C1D8C3DB33893F857 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Adventurlog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE7A7201603517ED44087F53 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Adventurlog/Pods-Adventurlog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBA751E820103662001DAFB7 /* Sources */ = {
@@ -492,6 +579,7 @@
 		};
 		BBA7521820103662001DAFB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62A6A9BA07F88F56B5AF920E /* Pods-Adventurlog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +595,7 @@
 		};
 		BBA7521920103662001DAFB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C02E5F90B2C13F2C48144AB9 /* Pods-Adventurlog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
