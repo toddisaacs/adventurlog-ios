@@ -14,7 +14,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let MAP_KEY = ""
+    let MAP_KEY = "AIzaSyD81T5oKW4r_wQmyocI2zw3YZ0ZIZwoI_k"
    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         

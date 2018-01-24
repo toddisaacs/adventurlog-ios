@@ -1,4 +1,4 @@
-platform :ios, '11.2'
+platform :ios, '11.1'
 
 source 'https://github.com/CocoaPods/Specs.git'
 target 'Adventurlog' do
