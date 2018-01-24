@@ -22,13 +22,13 @@ class QueryService {
     }()
     
     
-    
     var adventures: [Adventure] = []
     
     var errorMessage = ""
     
     let server = "https://adventurlog.now.sh"
     let searchUrlString = "/api/adventures/search/"
+    let mapSearchNearString = "/api/adventures/near/"
     
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
@@ -60,6 +60,33 @@ class QueryService {
         }
     }
     
+    func getMapSearchResults(lat: Double, lng: Double, distance: Int, type: String, completion: @escaping QueryResult) {
+        dataTask?.cancel()
+        
+        if var urlComponents = URLComponents(string: server + mapSearchNearString) {
+            urlComponents.query = "type=\(type)&lat=\(lat)&lng=\(lng)&distance=\(distance)"
+            
+            guard let url = urlComponents.url else { return }
+            dataTask = defaultSession.dataTask(with: url) { data, response, error in
+                defer { self.dataTask = nil }
+                
+                if let error = error {
+                    self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+                } else if let data = data,
+                    let response = response as? HTTPURLResponse,
+                    response.statusCode == 200 {
+                    self.updateAdventureSearchResults(data)
+                    
+                    DispatchQueue.main.async {
+                        completion(self.adventures, self.errorMessage)
+                    }
+                }
+            }
+            
+            dataTask?.resume()
+        }
+    }
+    
     
     fileprivate func updateAdventureSearchResults(_ data: Data) {
         var response: [Any]?
@@ -84,9 +111,9 @@ class QueryService {
                 let description = adventureDictionary["description"] as? String,
                 let created = adventureDictionary["created"] as? String,
                 let startLocation = adventureDictionary["startLocation"] as? JSONDictionary,
-                let startCoordinates = startLocation["coordinates"] as? [Float],
+                let startCoordinates = startLocation["coordinates"] as? [Double],
                 let endLocation = adventureDictionary["endLocation"] as? JSONDictionary,
-                let endCoordinates = endLocation["coordinates"] as? [Float]
+                let endCoordinates = endLocation["coordinates"] as? [Double]
                 
             {
                 print(startCoordinates)

@@ -71,17 +71,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     // When user taps cell, play the local file, if it's downloaded
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // let track = searchResults[indexPath.row]
-//        if track.downloaded {
-//            playDownload(track)
-//        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 // MARK: - TrackCellDelegate
-// Called by track cell to identify track for index path row,
-// then pass this to download service method.
 extension SearchViewController: TrackCellDelegate {
     
     func downloadTapped(_ cell: TrackCell) {

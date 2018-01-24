@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import Foundation.NSURL
 
-// Query service creates Track objects
 class Placemarker {
     
     let name: String
