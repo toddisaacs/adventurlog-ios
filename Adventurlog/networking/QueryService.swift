@@ -16,7 +16,7 @@ class QueryService {
     
     let isoDateFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withFractionalSeconds]
+        formatter.formatOptions = [.withTime]
 
         return formatter
     }()
