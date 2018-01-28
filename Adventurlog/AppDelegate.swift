@@ -15,11 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let MAP_KEY = "AIzaSyD81T5oKW4r_wQmyocI2zw3YZ0ZIZwoI_k"
-   
+  
+    //Color 1 - shade 0 = #2B4C6F = rgb( 43, 76,111) = rgba( 43, 76,111,1) = rgb0(0.169,0.298,0.435)
+    //Color 2 - shade 2 = #AA6C39 = rgb(170,108, 57) = rgba(170,108, 57,1) = rgb0(0.667,0.424,0.224)
+    // ** green - color shade 0 = #378B2E = rgb( 55,139, 46) = rgba( 55,139, 46,1) = rgb0(0.216,0.545,0.18)
+    let tintColor =  UIColor(red: 55/255, green: 139/255, blue: 46/255, alpha: 0.2)
+  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-       GMSServices.provideAPIKey(MAP_KEY)
-        
+        GMSServices.provideAPIKey(MAP_KEY)
+        customizeAppearance()
+      
         return true
     }
 
@@ -46,6 +52,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+  
+  // MARK - App Theme Customization
+  
+  private func customizeAppearance() {
+    window?.tintColor = tintColor
+    UISearchBar.appearance().barTintColor = tintColor
+    UINavigationBar.appearance().barTintColor = tintColor
+    UINavigationBar.appearance().tintColor = UIColor.white
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue):UIColor.white]
+  }
 
     // MARK: - Core Data stack
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3208C80E201A281600D70E42 /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3208C80D201A281600D70E42 /* color.txt */; };
+		3208C810201A298C00D70E42 /* color2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3208C80F201A298C00D70E42 /* color2.txt */; };
+		3208C812201A6C5D00D70E42 /* green_color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3208C811201A6C5D00D70E42 /* green_color.txt */; };
 		7164984F1699BD3A33267BFA /* libPods-Adventurlog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BACC5CD83F0CC759A0341 /* libPods-Adventurlog.a */; };
 		BB1B88562016A97A0073AD69 /* Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B88552016A97A0073AD69 /* Adventure.swift */; };
 		BB1B885820177EC50073AD69 /* Placemarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B885720177EC50073AD69 /* Placemarker.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3208C80D201A281600D70E42 /* color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
+		3208C80F201A298C00D70E42 /* color2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color2.txt; sourceTree = "<group>"; };
+		3208C811201A6C5D00D70E42 /* green_color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = green_color.txt; sourceTree = "<group>"; };
 		62A6A9BA07F88F56B5AF920E /* Pods-Adventurlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adventurlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adventurlog/Pods-Adventurlog.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1B88552016A97A0073AD69 /* Adventure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adventure.swift; sourceTree = "<group>"; };
 		BB1B885720177EC50073AD69 /* Placemarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemarker.swift; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 		BBA751E320103662001DAFB7 = {
 			isa = PBXGroup;
 			children = (
+				3208C811201A6C5D00D70E42 /* green_color.txt */,
+				3208C80F201A298C00D70E42 /* color2.txt */,
+				3208C80D201A281600D70E42 /* color.txt */,
 				BB1B885B2017A25E0073AD69 /* Podfile */,
 				BBA751EE20103662001DAFB7 /* Adventurlog */,
 				BBA7520620103662001DAFB7 /* AdventurlogTests */,
@@ -322,9 +331,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA751FD20103662001DAFB7 /* LaunchScreen.storyboard in Resources */,
+				3208C810201A298C00D70E42 /* color2.txt in Resources */,
 				BBA751FA20103662001DAFB7 /* Assets.xcassets in Resources */,
 				BB1B885C2017A25E0073AD69 /* Podfile in Resources */,
 				BBA751F520103662001DAFB7 /* Main.storyboard in Resources */,
+				3208C80E201A281600D70E42 /* color.txt in Resources */,
+				3208C812201A6C5D00D70E42 /* green_color.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

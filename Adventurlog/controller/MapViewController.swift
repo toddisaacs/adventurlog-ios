@@ -11,8 +11,8 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
 
-    @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+  @IBOutlet weak var mapView: GMSMapView!
+  @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     
     let queryService = QueryService()
@@ -21,7 +21,6 @@ class MapViewController: UIViewController {
 
     
     override func viewDidLoad() {
-        //set the map delegate
         mapView.delegate = self
         
         //load Adventures
@@ -42,22 +41,8 @@ class MapViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
 
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func delay(seconds: Double, completion:@escaping ()->()) {
-        let when = DispatchTime.now() + seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            completion()
-        }
-    }
     
     fileprivate func loadResultsInMap() {
         var bounds = GMSCoordinateBounds()
@@ -78,7 +63,7 @@ class MapViewController: UIViewController {
             bounds = bounds.includingCoordinate(marker.position)
         }
         
-        let updatedCamera = GMSCameraUpdate.fit(bounds)
+        let updatedCamera = GMSCameraUpdate.fit(bounds, with: UIEdgeInsets(top: 60, left: 10, bottom: 10, right: 10))
         self.mapView.animate(with: updatedCamera)
     }
     
