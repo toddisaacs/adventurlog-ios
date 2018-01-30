@@ -15,6 +15,8 @@
 		BB1B885820177EC50073AD69 /* Placemarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B885720177EC50073AD69 /* Placemarker.swift */; };
 		BB1B885C2017A25E0073AD69 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BB1B885B2017A25E0073AD69 /* Podfile */; };
 		BB1B885E2017A55F0073AD69 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B885D2017A55F0073AD69 /* MapViewController.swift */; };
+		BB8044482020248400A64AAC /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8044472020248400A64AAC /* Styles.swift */; };
+		BB80444C202025EF00A64AAC /* BoatMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB80444B202025EF00A64AAC /* BoatMarkerView.swift */; };
 		BBA751F020103662001DAFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751EF20103662001DAFB7 /* AppDelegate.swift */; };
 		BBA751F220103662001DAFB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA751F120103662001DAFB7 /* SearchViewController.swift */; };
 		BBA751F520103662001DAFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA751F320103662001DAFB7 /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		BB1B885720177EC50073AD69 /* Placemarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placemarker.swift; sourceTree = "<group>"; };
 		BB1B885B2017A25E0073AD69 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BB1B885D2017A55F0073AD69 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BB8044472020248400A64AAC /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		BB80444B202025EF00A64AAC /* BoatMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatMarkerView.swift; sourceTree = "<group>"; };
 		BBA751EC20103662001DAFB7 /* Adventurlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adventurlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA751EF20103662001DAFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBA751F120103662001DAFB7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 		BBA751EE20103662001DAFB7 /* Adventurlog */ = {
 			isa = PBXGroup;
 			children = (
+				BB8044472020248400A64AAC /* Styles.swift */,
 				BBA75223201036BA001DAFB7 /* controller */,
 				BBA75222201036B0001DAFB7 /* networking */,
 				BBA75221201036AA001DAFB7 /* model */,
@@ -161,6 +166,7 @@
 				BBA751FB20103662001DAFB7 /* LaunchScreen.storyboard */,
 				BBA751FE20103662001DAFB7 /* Info.plist */,
 				BBA751F620103662001DAFB7 /* Adventurlog.xcdatamodeld */,
+				BB80444B202025EF00A64AAC /* BoatMarkerView.swift */,
 			);
 			path = Adventurlog;
 			sourceTree = "<group>";
@@ -419,8 +425,10 @@
 				BBA7522B201043FE001DAFB7 /* TrackCell.swift in Sources */,
 				BB1B88562016A97A0073AD69 /* Adventure.swift in Sources */,
 				BBA7522D2010442D001DAFB7 /* DownloadService.swift in Sources */,
+				BB8044482020248400A64AAC /* Styles.swift in Sources */,
 				BB1B885820177EC50073AD69 /* Placemarker.swift in Sources */,
 				BBA751F220103662001DAFB7 /* SearchViewController.swift in Sources */,
+				BB80444C202025EF00A64AAC /* BoatMarkerView.swift in Sources */,
 				BBA751F820103662001DAFB7 /* Adventurlog.xcdatamodeld in Sources */,
 				BB1B885E2017A55F0073AD69 /* MapViewController.swift in Sources */,
 				BBA7522720104180001DAFB7 /* QueryService.swift in Sources */,

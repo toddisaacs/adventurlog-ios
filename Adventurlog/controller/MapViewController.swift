@@ -38,10 +38,15 @@ class MapViewController: UIViewController {
     private func loadResultsInMap() {
         var markers:[GMSMarker] = []
         
+        let boatIconView = BoatMarkerView()
+        boatIconView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        boatIconView.backgroundColor = UIColor.clear
+        
         for adventure in self.searchResults {
             let marker = GMSMarker()
-
+            
             marker.position = CLLocationCoordinate2D( latitude: adventure.startLocation[1], longitude: adventure.startLocation[0])
+            marker.iconView = boatIconView
             marker.title = adventure.name
             marker.snippet = adventure.description
             marker.map = self.mapView
