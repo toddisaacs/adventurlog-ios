@@ -29,6 +29,7 @@ class QueryService {
     let server = "https://adventurlog.now.sh"
     let searchUrlString = "/api/adventures/search/"
     let mapSearchNearString = "/api/adventures/near/"
+    let mapSearchWithinString = "/api/adventures/within"
     
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
@@ -65,6 +66,33 @@ class QueryService {
         
         if var urlComponents = URLComponents(string: server + mapSearchNearString) {
             urlComponents.query = "type=\(type)&lat=\(lat)&lng=\(lng)&distance=\(distance)"
+            
+            guard let url = urlComponents.url else { return }
+            dataTask = defaultSession.dataTask(with: url) { data, response, error in
+                defer { self.dataTask = nil }
+                
+                if let error = error {
+                    self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+                } else if let data = data,
+                    let response = response as? HTTPURLResponse,
+                    response.statusCode == 200 {
+                    self.updateAdventureSearchResults(data)
+                    
+                    DispatchQueue.main.async {
+                        completion(self.adventures, self.errorMessage)
+                    }
+                }
+            }
+            
+            dataTask?.resume()
+        }
+    }
+    
+    func mapSearchWithinArea(lngLowerLeft: Double, latLowerLeft: Double, lngUpperRight: Double, latUpperRight: Double, completion: @escaping QueryResult) {
+        dataTask?.cancel()
+        
+        if var urlComponents = URLComponents(string: server + mapSearchWithinString) {
+            urlComponents.query = "lngLowerLeft=\(lngLowerLeft)&latLowerLeft=\(latLowerLeft)&lngUpperRight=\(lngUpperRight)&latUpperRight=\(latUpperRight)"
             
             guard let url = urlComponents.url else { return }
             dataTask = defaultSession.dataTask(with: url) { data, response, error in

@@ -14,6 +14,8 @@ class MapViewController: UIViewController {
   @IBOutlet weak var mapView: GMSMapView!
   @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    let defaultLocation = [ -82.292618, 26.698751]
+    let defaultZoom = 6
     
     let queryService = QueryService()
     var searchResults: [Adventure] = []
@@ -23,29 +25,17 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         mapView.delegate = self
         
-        //load Adventures
-        loadingIndicator.isHidden = false
-        loadingIndicator.startAnimating()
-        
-        queryService.getMapSearchResults(lat: 26.698751, lng: -82.292618, distance: 100000, type: "Sailing" ) { results, errorMessage in
-            
-            if let results = results {
-                self.searchResults = results
-            }
-            self.loadResultsInMap()
-            
-            if !errorMessage.isEmpty {
-                print("Search error: " + errorMessage)
-                
-            }
-        }
+        //set initial location
+        // TODO - save location as a starting place
+        let camera = GMSCameraPosition.camera(withLatitude: 26.698751,
+                                              longitude: -82.292618,
+                                              zoom: 8)
+        self.mapView.animate(to: camera)
     }
     
-
-
     
-    fileprivate func loadResultsInMap() {
-        var bounds = GMSCoordinateBounds()
+    
+    private func loadResultsInMap() {
         var markers:[GMSMarker] = []
         
         for adventure in self.searchResults {
@@ -58,26 +48,7 @@ class MapViewController: UIViewController {
             
             markers.append(marker)
         }
-        
-        for marker in markers {
-            bounds = bounds.includingCoordinate(marker.position)
-        }
-        
-        let updatedCamera = GMSCameraUpdate.fit(bounds, with: UIEdgeInsets(top: 60, left: 10, bottom: 10, right: 10))
-        self.mapView.animate(with: updatedCamera)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension MapViewController: GMSMapViewDelegate{
@@ -99,5 +70,25 @@ extension MapViewController: GMSMapViewDelegate{
     
     func mapView(_ mapView: GMSMapView, didLongPressInfoWindowOf marker: GMSMarker) {
         print("didLongPressInfoWindowOf")
+    }
+    
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        let upperRight = self.mapView.projection.visibleRegion().farRight
+        let lowerLeft = self.mapView.projection.visibleRegion().nearLeft
+        
+        queryService.mapSearchWithinArea(lngLowerLeft: lowerLeft.longitude, latLowerLeft: lowerLeft.latitude, lngUpperRight: upperRight.longitude, latUpperRight: upperRight.latitude) { results, errorMessage in
+            
+            if let results = results {
+                self.searchResults = results
+                self.mapView.clear()
+                self.loadResultsInMap()
+            }
+
+            if !errorMessage.isEmpty {
+                print("Search error: " + errorMessage)
+                
+            }
+        }
     }
 }
