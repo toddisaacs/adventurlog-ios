@@ -31,6 +31,8 @@ class MapViewController: UIViewController {
                                               longitude: -82.292618,
                                               zoom: 8)
         self.mapView.animate(to: camera)
+      
+        self.mapView.settings.rotateGestures = false
     }
     
     
@@ -50,7 +52,7 @@ class MapViewController: UIViewController {
             marker.title = adventure.name
             marker.snippet = adventure.description
             marker.map = self.mapView
-            
+          
             markers.append(marker)
         }
     }
