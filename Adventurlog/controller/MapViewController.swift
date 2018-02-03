@@ -19,6 +19,8 @@ class MapViewController: UIViewController {
     
     let queryService = QueryService()
     var searchResults: [Adventure] = []
+
+    var placemarks:[Placemarker] = []
     var selectedMarker:GMSMarker?
 
     
@@ -51,6 +53,7 @@ class MapViewController: UIViewController {
             marker.iconView = boatIconView
             marker.title = adventure.name
             marker.snippet = adventure.description
+            marker.userData = adventure.id
             marker.map = self.mapView
           
             markers.append(marker)
@@ -67,7 +70,24 @@ extension MapViewController: GMSMapViewDelegate{
         selectedMarker = marker;
         marker.icon = GMSMarker.markerImage(with: .black)
         mapView.selectedMarker = marker
-        
+      
+        //get placemarks
+        let adventureId = marker.userData as! String
+        queryService.getPlaceholdersFor(adventureId: adventureId) { results, errorMessage in
+          
+          if let results = results {
+            self.placemarks = results
+            print("Total placemarkers \(results.count)")
+            self.mapView.clear()
+            self.loadResultsInMap()
+          }
+          
+          if !errorMessage.isEmpty {
+            print("Search error: " + errorMessage)
+            
+          }
+        }
+      
         return true;
     }
     

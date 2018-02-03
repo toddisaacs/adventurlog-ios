@@ -8,32 +8,103 @@
 
 import Foundation
 
-class Placemarker {
+struct Placemarker: Codable {
+  
+  enum CodingKeys: String, CodingKey {
+    case id = "_id"
+    case name
+    case description
+    case routeId
+    case adventureId = "adventure"
+    case timestamp
+    case velocity
+    case elevation
+    case location
+  }
+  
+  
+  static let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    let defaultLocaleIdentifier = "en_US_POSIX"
+    let locale = Locale(identifier: defaultLocaleIdentifier)
+    formatter.locale = locale
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sssZ"
     
-    let name: String
-    let adventureId: String
-    let description: String
-    let routeId: String
-    let timestamp: Date
-    let velocity: String
-    let elevation: String
-    let location: [Float]
+    return formatter
+  }()
+  
+  static let decoder:JSONDecoder = {
+    let _decoder = JSONDecoder()
+    _decoder.dateDecodingStrategy = .formatted(Placemarker.dateFormatter)
     
-    let formatter = ISO8601DateFormatter()
+    return _decoder
+  }()
+  
+  static let encoder:JSONEncoder = {
+    let _encoder = JSONEncoder()
+    _encoder.dateEncodingStrategy = .formatted(Placemarker.dateFormatter)
     
-    init(name: String, adventureId: String, description: String, routeId: String, timestampString: String, velocity: String, elevation: String, location: [Float]) {
-        self.name = name
-        self.adventureId = adventureId
-        self.description = description
-        self.routeId = routeId
-        
-        self.timestamp = formatter.date(from: timestampString)!
-        self.velocity = velocity
-        self.elevation = elevation
-        self.location = location
+    return _encoder
+  }()
+  
+  
+  // PROPERTIES
+  let id: String
+  let name: String
+  let description: String
+  let routeId: String?
+  let adventureId: String
+  let timestamp: Date?
+  let velocity: String?
+  let elevation: String?
+  let location: Location
+  
+  static func decodePlaceMark(json: String) -> Placemarker? {
+    var placemark:Placemarker?
+    do {
+      placemark = try Placemarker.decoder.decode(Placemarker.self, from:json.data(using: .utf8)!)
+    } catch {
+      print("error" + error.localizedDescription)
     }
     
+    return placemark
+  }
+  
+  static func decodePlaceMarks(jsonData: Data) -> [Placemarker]? {
+    var placemarks:[Placemarker]?
+    do {
+      placemarks = try Placemarker.decoder.decode([Placemarker].self, from:jsonData)
+    } catch {
+      print("error" + error.localizedDescription)
+    }
     
+    return placemarks
+  }
+  
+  
+  static func encodePlacemark(marker: Placemarker) -> Data? {
+    var jsonData: Data?
+    do {
+      jsonData = try Placemarker.encoder.encode(marker)
+    } catch {
+      print(error.localizedDescription)
+    }
+    
+    return jsonData
+  }
 }
 
+enum GeoJSONType : String, Codable {
+  case Point
+  case LineString
+  case Polygon
+  case MultiPoint
+  case MultiLineString
+  case MultiPolygon
+  case GeometryCollection
+}
 
+struct Location: Codable {
+  let coordinates: [Double]
+  let type: GeoJSONType
+}
