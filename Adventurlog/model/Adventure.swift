@@ -9,19 +9,21 @@
 import Foundation
 
 class Adventure {
-    
+  
+    let id: String
     let name: String
     let authorId: String
     let description: String
     let endLocation: [Double]
     let startLocation: [Double]
     
-    init(name: String, authorId: String, description: String, startLocation:[Double], endLocation:[Double]) {
-        self.name = name
-        self.authorId = authorId
-        self.description = description
-        self.endLocation = endLocation
-        self.startLocation = startLocation
-    }
+  init(id: String, name: String, authorId: String, description: String, startLocation:[Double], endLocation:[Double]) {
+    self.id = id
+    self.name = name
+    self.authorId = authorId
+    self.description = description
+    self.endLocation = endLocation
+    self.startLocation = startLocation
+  }
     
 }

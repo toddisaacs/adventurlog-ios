@@ -13,7 +13,8 @@ class QueryService {
     
     typealias JSONDictionary = [String: Any]
     typealias QueryResult = ([Adventure]?, String) -> ()
-    
+    typealias PlacemarkerQueryResult = ([Placemarker]?, String) -> ()
+  
     let isoDateFormatter: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withTime]
@@ -23,13 +24,15 @@ class QueryService {
     
     
     var adventures: [Adventure] = []
-    
+    var markers: [Placemarker] = []
     var errorMessage = ""
     
     let server = "https://adventurlog.now.sh"
-    let searchUrlString = "/api/adventures/search/"
-    let mapSearchNearString = "/api/adventures/near/"
-    let mapSearchWithinString = "/api/adventures/within"
+    let adventure = "/api/adventures"
+    let search = "/search/"
+    let near = "/near/"
+    let within = "/within"
+    let placemarkers = "/placemarkers"
     
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
@@ -37,7 +40,7 @@ class QueryService {
     func getSearchResults(searchTerm: String, completion: @escaping QueryResult) {
         dataTask?.cancel()
         
-        if var urlComponents = URLComponents(string: server + searchUrlString) {
+        if var urlComponents = URLComponents(string: server + adventure + search) {
             urlComponents.query = "q=\(searchTerm)"
             
             guard let url = urlComponents.url else { return }
@@ -64,7 +67,7 @@ class QueryService {
     func getMapSearchResults(lat: Double, lng: Double, distance: Int, type: String, completion: @escaping QueryResult) {
         dataTask?.cancel()
         
-        if var urlComponents = URLComponents(string: server + mapSearchNearString) {
+        if var urlComponents = URLComponents(string: server + adventure + near) {
             urlComponents.query = "type=\(type)&lat=\(lat)&lng=\(lng)&distance=\(distance)"
             
             guard let url = urlComponents.url else { return }
@@ -91,7 +94,7 @@ class QueryService {
     func mapSearchWithinArea(lngLowerLeft: Double, latLowerLeft: Double, lngUpperRight: Double, latUpperRight: Double, completion: @escaping QueryResult) {
         dataTask?.cancel()
         
-        if var urlComponents = URLComponents(string: server + mapSearchWithinString) {
+        if var urlComponents = URLComponents(string: server + adventure + within) {
             urlComponents.query = "lngLowerLeft=\(lngLowerLeft)&latLowerLeft=\(latLowerLeft)&lngUpperRight=\(lngUpperRight)&latUpperRight=\(latUpperRight)"
             
             guard let url = urlComponents.url else { return }
@@ -114,7 +117,36 @@ class QueryService {
             dataTask?.resume()
         }
     }
+  
+  func getPlaceholdersFor(adventureId:String, completion: @escaping PlacemarkerQueryResult) {
+    dataTask?.cancel()
     
+    let placeMarkersUrl = "\(server)\(adventure)/\(adventureId)\(placemarkers)"
+    if var urlComponents = URLComponents(string: placeMarkersUrl) {
+      
+      guard let url = urlComponents.url else { return }
+      dataTask = defaultSession.dataTask(with: url) { data, response, error in
+        defer { self.dataTask = nil }
+        
+        if let error = error {
+          self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+        } else if let data = data,
+          let response = response as? HTTPURLResponse,
+          response.statusCode == 200 {
+          
+          if let parseData = Placemarker.decodePlaceMarks(jsonData: data) {
+            self.markers = parseData
+          }
+        
+          DispatchQueue.main.async {
+            completion(self.markers, self.errorMessage)
+          }
+        }
+      }
+      
+      dataTask?.resume()
+    }
+  }
     
     fileprivate func updateAdventureSearchResults(_ data: Data) {
         var response: [Any]?
@@ -135,6 +167,7 @@ class QueryService {
         var index = 0
         for adventureDictionary in array {
             if let name = adventureDictionary["name"] as? String,
+                let id = adventureDictionary["_id"] as? String,
                 let authorId = adventureDictionary["author"] as? String,
                 let description = adventureDictionary["description"] as? String,
                 let created = adventureDictionary["created"] as? String,
@@ -148,8 +181,8 @@ class QueryService {
                 print(adventureDictionary)
                 let timestamp = isoDateFormatter.date(from: created);
                 print(isoDateFormatter.string(from: timestamp!));
-                //isoDateFormatter.dateSt
-                adventures.append(Adventure(name: name, authorId: authorId, description: description, startLocation: startCoordinates, endLocation: endCoordinates))
+
+                adventures.append(Adventure(id: id, name: name, authorId: authorId, description: description, startLocation: startCoordinates, endLocation: endCoordinates))
                 index += 1
             } else {
                 errorMessage += "Problem parsing adventures"
