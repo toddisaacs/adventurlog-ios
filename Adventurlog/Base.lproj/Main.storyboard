@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CJd-L5-ZBi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CJd-L5-ZBi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -91,35 +91,10 @@
                     <view key="view" contentMode="scaleToFill" id="6qO-BT-cBG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw2-7h-rnG" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="k86-Q9-pjr">
-                                        <rect key="frame" x="177" y="291" width="20" height="20"/>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="k86-Q9-pjr" firstAttribute="centerX" secondItem="tw2-7h-rnG" secondAttribute="centerX" id="prO-Z4-QhP"/>
-                                    <constraint firstItem="k86-Q9-pjr" firstAttribute="centerY" secondItem="tw2-7h-rnG" secondAttribute="centerY" id="tCk-sH-gED"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="tw2-7h-rnG" firstAttribute="leading" secondItem="6qO-BT-cBG" secondAttribute="leading" id="6dm-AR-str"/>
-                            <constraint firstAttribute="trailing" secondItem="tw2-7h-rnG" secondAttribute="trailing" id="TUW-bh-7jD"/>
-                            <constraint firstItem="tw2-7h-rnG" firstAttribute="bottom" secondItem="RQH-g4-dRk" secondAttribute="bottom" id="bsE-K1-upG"/>
-                            <constraint firstItem="tw2-7h-rnG" firstAttribute="top" secondItem="RQH-g4-dRk" secondAttribute="top" id="zbL-hl-QO9"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RQH-g4-dRk"/>
                     </view>
                     <navigationItem key="navigationItem" id="8rS-I1-93W"/>
-                    <connections>
-                        <outlet property="loadingIndicator" destination="k86-Q9-pjr" id="ddg-os-Lou"/>
-                        <outlet property="mapView" destination="tw2-7h-rnG" id="HhD-sF-CuA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75w-2m-Bwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

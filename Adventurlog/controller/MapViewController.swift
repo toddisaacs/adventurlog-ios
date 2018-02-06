@@ -11,8 +11,17 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
 
-  @IBOutlet weak var mapView: GMSMapView!
-  @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+  lazy var mapView: GMSMapView = {
+    let _mapView = GMSMapView(frame: .init(x: 0, y: 0, width: 110, height: 200))
+    _mapView.translatesAutoresizingMaskIntoConstraints = false
+    _mapView.settings.rotateGestures = false
+    _mapView.delegate = self
+    
+    self.view.addSubview(_mapView)
+    
+    return _mapView
+  }()
+  
     
     let defaultLocation = [ -82.292618, 26.698751]
     let defaultZoom = 6
@@ -25,19 +34,23 @@ class MapViewController: UIViewController {
 
     
     override func viewDidLoad() {
-        mapView.delegate = self
+      layoutMap()
         
         //set initial location
         // TODO - save location as a starting place
+        print("moving camera")
         let camera = GMSCameraPosition.camera(withLatitude: 26.698751,
                                               longitude: -82.292618,
                                               zoom: 8)
         self.mapView.animate(to: camera)
-      
-        self.mapView.settings.rotateGestures = false
     }
     
-    
+    private func layoutMap() {
+      mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+      mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+      mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+      mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    }
     
     private func loadResultsInMap() {
         var markers:[GMSMarker] = []
@@ -78,8 +91,8 @@ extension MapViewController: GMSMapViewDelegate{
           if let results = results {
             self.placemarks = results
             print("Total placemarkers \(results.count)")
-            self.mapView.clear()
-            self.loadResultsInMap()
+            //self.mapView.clear()
+            //self.loadResultsInMap()
           }
           
           if !errorMessage.isEmpty {
@@ -101,6 +114,7 @@ extension MapViewController: GMSMapViewDelegate{
     
     
     func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+      print("mapview idleAt")
         let upperRight = self.mapView.projection.visibleRegion().farRight
         let lowerLeft = self.mapView.projection.visibleRegion().nearLeft
         
