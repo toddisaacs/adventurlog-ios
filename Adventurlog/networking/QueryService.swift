@@ -166,6 +166,8 @@ class QueryService {
         
         var index = 0
         for adventureDictionary in array {
+           let imageURL = adventureDictionary["imageURL"] as? String ?? "ocean1"
+          
             if let name = adventureDictionary["name"] as? String,
                 let id = adventureDictionary["_id"] as? String,
                 let authorId = adventureDictionary["author"] as? String,
@@ -175,6 +177,7 @@ class QueryService {
                 let startCoordinates = startLocation["coordinates"] as? [Double],
                 let endLocation = adventureDictionary["endLocation"] as? JSONDictionary,
                 let endCoordinates = endLocation["coordinates"] as? [Double]
+              
                 
             {
                 print(startCoordinates)
@@ -182,7 +185,7 @@ class QueryService {
                 let timestamp = isoDateFormatter.date(from: created);
                 print(isoDateFormatter.string(from: timestamp!));
 
-                adventures.append(Adventure(id: id, name: name, authorId: authorId, description: description, startLocation: startCoordinates, endLocation: endCoordinates))
+              adventures.append(Adventure(id: id, name: name, authorId: authorId, description: description, startLocation: startCoordinates, endLocation: endCoordinates, imageURL: imageURL))
                 index += 1
             } else {
                 errorMessage += "Problem parsing adventures"

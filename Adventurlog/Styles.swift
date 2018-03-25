@@ -16,7 +16,7 @@ import UIKit
 public class Styles : NSObject {
 
     //// Cache
-
+  
     private struct Cache {
         static let boat: UIColor = UIColor(red: 0.140, green: 0.257, blue: 0.488, alpha: 1.000)
         static let outline: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
