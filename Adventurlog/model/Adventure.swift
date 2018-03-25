@@ -16,14 +16,16 @@ class Adventure {
     let description: String
     let endLocation: [Double]
     let startLocation: [Double]
+    var imageURL: String
     
-  init(id: String, name: String, authorId: String, description: String, startLocation:[Double], endLocation:[Double]) {
+  init(id: String, name: String, authorId: String, description: String, startLocation:[Double], endLocation:[Double], imageURL:String) {
     self.id = id
     self.name = name
     self.authorId = authorId
     self.description = description
     self.endLocation = endLocation
     self.startLocation = startLocation
+    self.imageURL = imageURL
   }
     
 }

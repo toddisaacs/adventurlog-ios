@@ -10,6 +10,7 @@
 		3208C80E201A281600D70E42 /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3208C80D201A281600D70E42 /* color.txt */; };
 		3208C810201A298C00D70E42 /* color2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3208C80F201A298C00D70E42 /* color2.txt */; };
 		3208C812201A6C5D00D70E42 /* green_color.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3208C811201A6C5D00D70E42 /* green_color.txt */; };
+		3232C2F520309031004A16BE /* AdventureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3232C2F420309031004A16BE /* AdventureCollectionViewCell.swift */; };
 		326671052023534B00ED5403 /* PMarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326671042023534B00ED5403 /* PMarkTests.swift */; };
 		3266710720260E8F00ED5403 /* JSONMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3266710620260E8F00ED5403 /* JSONMocks.swift */; };
 		7164984F1699BD3A33267BFA /* libPods-Adventurlog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0BACC5CD83F0CC759A0341 /* libPods-Adventurlog.a */; };
@@ -55,6 +56,7 @@
 		3208C80D201A281600D70E42 /* color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
 		3208C80F201A298C00D70E42 /* color2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = color2.txt; sourceTree = "<group>"; };
 		3208C811201A6C5D00D70E42 /* green_color.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = green_color.txt; sourceTree = "<group>"; };
+		3232C2F420309031004A16BE /* AdventureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureCollectionViewCell.swift; sourceTree = "<group>"; };
 		326671042023534B00ED5403 /* PMarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMarkTests.swift; sourceTree = "<group>"; };
 		3266710620260E8F00ED5403 /* JSONMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONMocks.swift; sourceTree = "<group>"; };
 		62A6A9BA07F88F56B5AF920E /* Pods-Adventurlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Adventurlog.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Adventurlog/Pods-Adventurlog.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA7522A201043FE001DAFB7 /* TrackCell.swift */,
+				3232C2F420309031004A16BE /* AdventureCollectionViewCell.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBA7522B201043FE001DAFB7 /* TrackCell.swift in Sources */,
+				3232C2F520309031004A16BE /* AdventureCollectionViewCell.swift in Sources */,
 				BB1B88562016A97A0073AD69 /* Adventure.swift in Sources */,
 				BBA7522D2010442D001DAFB7 /* DownloadService.swift in Sources */,
 				BB8044482020248400A64AAC /* Styles.swift in Sources */,
