@@ -101,7 +101,7 @@ class MapViewController: UIViewController {
     collectionViewShowing = true
     collectionViewHeightConstraint.constant = cellHeight
     
-    UIView.animate(withDuration: 0.5,
+    UIView.animate(withDuration: 0.3,
                    delay: 0.0,
                    options: .curveEaseIn,
                    animations: {
@@ -114,7 +114,7 @@ class MapViewController: UIViewController {
     collectionViewShowing = false
     collectionViewHeightConstraint.constant = 0
     
-    UIView.animate(withDuration: 0.5,
+    UIView.animate(withDuration: 0.3,
                    delay: 0.0,
                    options: .curveEaseIn,
                    animations: {
@@ -157,8 +157,9 @@ extension MapViewController: GMSMapViewDelegate {
     if (selectedMarker != nil) {
       selectedMarker?.icon = GMSMarker.markerImage(with: .red)
     }
+    
     selectedMarker = marker;
-    marker.icon = GMSMarker.markerImage(with: .black)
+    marker.icon = GMSMarker.markerImage(with: .red)
     mapView.selectedMarker = marker
     
     //get placemarks
