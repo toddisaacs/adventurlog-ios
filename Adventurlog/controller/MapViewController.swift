@@ -194,6 +194,14 @@ extension MapViewController: GMSMapViewDelegate {
       }
     }
     
+    //scroll to selected cell
+    let markerId = marker.userData as! String
+    for (index, adventure) in self.searchResults.enumerated() {
+      if adventure.id == markerId {
+        self.adventureCollectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+        break
+      }
+    }
     return true;
   }
   
