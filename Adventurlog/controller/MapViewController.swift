@@ -123,25 +123,41 @@ class MapViewController: UIViewController {
                    completion: nil)
   }
   
+  private let boatMarker = BoatMarkerView()
+  
+  private var selectedBoatMarker:BoatMarkerView  {
+    let marker = BoatMarkerView()
+    marker.selected = true
+    return marker
+  }
+
   
   private func loadResultsInMap() {
     var markers:[GMSMarker] = []
     
     let boatIconView = BoatMarkerView()
-    boatIconView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+    boatIconView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
     boatIconView.backgroundColor = UIColor.clear
     
     for adventure in self.searchResults {
       let marker = GMSMarker()
       
       marker.position = CLLocationCoordinate2D( latitude: adventure.startLocation[1], longitude: adventure.startLocation[0])
-      marker.iconView = boatIconView
+      // marker.iconView = boatIconView
+      marker.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: false, strokeWidth: CGFloat(0.5))
+
       marker.title = adventure.name
       marker.snippet = adventure.description
       marker.userData = adventure.id
       marker.map = self.mapView
       
       markers.append(marker)
+    }
+  }
+  
+  private func resetSelectedMarker() {
+    if (selectedMarker != nil) {
+      selectedMarker?.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: false, strokeWidth: CGFloat(0.5))
     }
   }
 }
@@ -153,13 +169,12 @@ extension MapViewController: GMSMapViewDelegate {
     if (!collectionViewShowing) {
       self.showCollectionView()
     }
-    print("marker tapped")
-    if (selectedMarker != nil) {
-      selectedMarker?.icon = GMSMarker.markerImage(with: .red)
-    }
+    
+    resetSelectedMarker()
     
     selectedMarker = marker;
-    marker.icon = GMSMarker.markerImage(with: .red)
+
+    marker.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: true, strokeWidth: CGFloat(0.5))
     mapView.selectedMarker = marker
     
     //get placemarks
@@ -216,6 +231,7 @@ extension MapViewController: GMSMapViewDelegate {
     print("didTapAt")
     if (collectionViewShowing) {
       hideCollectionView()
+      resetSelectedMarker()
     }
   }
 }
