@@ -10,11 +10,16 @@ import UIKit
 
 class BoatMarkerView: UIView {
 
-    
+  var selected: Bool = false {
+    didSet {
+      setNeedsDisplay()
+    }
+  }
+  
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        Styles.drawBoatIcon(frame: self.frame, resizing: .aspectFit)
+      Styles.drawBoatIcon(frame: self.frame, selected: false)
     }
  
 
