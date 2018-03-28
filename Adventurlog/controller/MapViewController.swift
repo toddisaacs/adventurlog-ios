@@ -46,6 +46,7 @@ class MapViewController: UIViewController {
   
   var placemarks:[Placemarker] = []
   var selectedMarker:GMSMarker?
+  var markers:[GMSMarker] = []
   
   let cellId = "cellId"
   let cellInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -133,7 +134,7 @@ class MapViewController: UIViewController {
 
   
   private func loadResultsInMap() {
-    var markers:[GMSMarker] = []
+    markers.removeAll()
     
     let boatIconView = BoatMarkerView()
     boatIconView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
@@ -160,6 +161,13 @@ class MapViewController: UIViewController {
       selectedMarker?.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: false, strokeWidth: CGFloat(0.5))
     }
   }
+  
+  private func setSelectedMarker(marker: GMSMarker) {
+    resetSelectedMarker()
+    
+    selectedMarker = marker
+    marker.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: true, strokeWidth: CGFloat(0.5))
+  }
 }
 
 extension MapViewController: GMSMapViewDelegate {
@@ -169,13 +177,8 @@ extension MapViewController: GMSMapViewDelegate {
     if (!collectionViewShowing) {
       self.showCollectionView()
     }
-    
-    resetSelectedMarker()
-    
-    selectedMarker = marker;
-
-    marker.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: true, strokeWidth: CGFloat(0.5))
-    mapView.selectedMarker = marker
+   
+    setSelectedMarker(marker: marker)
     
     //get placemarks
     let adventureId = marker.userData as! String
@@ -280,8 +283,6 @@ extension MapViewController: UICollectionViewDelegateFlowLayout {
     return collectionViewLineWidth
   }
   
-  
-  
   func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
     
     //Adjust target offset to match nearest page and adjust for offset
@@ -292,6 +293,10 @@ extension MapViewController: UICollectionViewDelegateFlowLayout {
     let targetContentOffsetX = Float(targetContentOffset.pointee.x)
     let page = ((targetContentOffsetX + Float(collectionViewCellOffset))/cellWidth).rounded(.toNearestOrEven)
     let contentOffsetX = CGFloat(page * (cellWidth + Float(collectionViewLineWidth)) - Float(collectionViewCellOffset))
+    
+    //adjust map
+    let index = Int(page)
+    setSelectedMarker(marker: markers[index])
     
     //the start and ending cells don't abide by the targetoffset, the collection view will automatically adjust so cells fill the view
     targetContentOffset.pointee = CGPoint(x: contentOffsetX, y: CGFloat(0))
