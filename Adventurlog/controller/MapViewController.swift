@@ -27,10 +27,8 @@ class MapViewController: UIViewController {
     layout.scrollDirection = .horizontal
     
     collectionView.translatesAutoresizingMaskIntoConstraints = false
-    //collectionView.backgroundColor = UIColor.blue
     collectionView.isPagingEnabled = false
     collectionView.decelerationRate = UIScrollViewDecelerationRateFast
-    
     collectionView.delegate = self
     collectionView.dataSource = self
     return collectionView
@@ -80,6 +78,7 @@ class MapViewController: UIViewController {
     adventureCollectionView.register(AdventureCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     
     print("moving camera")
+    //TODO store users last location
     let camera = GMSCameraPosition.camera(withLatitude: 26.698751,
                                           longitude: -82.292618,
                                           zoom: 8)
@@ -172,6 +171,9 @@ class MapViewController: UIViewController {
 
 extension MapViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+    
+    //hide infowindow
+    mapView.selectedMarker = nil
     
     //show collection view
     if (!collectionViewShowing) {
