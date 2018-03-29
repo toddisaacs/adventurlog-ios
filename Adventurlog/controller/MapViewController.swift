@@ -40,11 +40,13 @@ class MapViewController: UIViewController {
   let defaultZoom = 6
   
   let queryService = QueryService()
-  var searchResults: [Adventure] = []
   
-  var placemarks:[Placemarker] = []
-  var selectedMarker:GMSMarker?
+  var searchResults: [Adventure] = []
+  var searchResultsPlacemarks:[Placemarker] = []
+
   var markers:[GMSMarker] = []
+  var placemarkers:[GMSMarker] = []
+  var selectedMarker:GMSMarker?
   
   let cellId = "cellId"
   let cellInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -123,27 +125,20 @@ class MapViewController: UIViewController {
                    completion: nil)
   }
   
-  private let boatMarker = BoatMarkerView()
-  
-  private var selectedBoatMarker:BoatMarkerView  {
-    let marker = BoatMarkerView()
-    marker.selected = true
-    return marker
-  }
-
   
   private func loadResultsInMap() {
-    markers.removeAll()
+   
+    var selectedMarkerId:String?
+    if selectedMarker != nil {
+      selectedMarkerId = selectedMarker?.userData as? String
+    }
     
-    let boatIconView = BoatMarkerView()
-    boatIconView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-    boatIconView.backgroundColor = UIColor.clear
+    markers.removeAll()
     
     for adventure in self.searchResults {
       let marker = GMSMarker()
       
       marker.position = CLLocationCoordinate2D( latitude: adventure.startLocation[1], longitude: adventure.startLocation[0])
-      // marker.iconView = boatIconView
       marker.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: false, strokeWidth: CGFloat(0.5))
 
       marker.title = adventure.name
@@ -151,29 +146,60 @@ class MapViewController: UIViewController {
       marker.userData = adventure.id
       marker.map = self.mapView
       
+      //reselect marker
+      if selectedMarkerId != nil && adventure.id == selectedMarkerId {
+        setSelectedMarker(marker: marker)
+      }
+      
       markers.append(marker)
     }
   }
   
-  private func resetSelectedMarker() {
+  private func loadPlacemarkersInMap() {
+    placemarkers.removeAll()
+    
+    for placemark in searchResultsPlacemarks {
+      let marker = GMSMarker()
+      marker.position = CLLocationCoordinate2D(latitude: placemark.location.coordinates[1], longitude: placemark.location.coordinates[0])
+      marker.icon = Styles.imageOfPlacemarker(imageSize: CGSize(width: 3, height: 3))
+      marker.userData = placemark.id
+      marker.map = self.mapView
+      
+      placemarkers.append(marker)
+    }
+  }
+  
+
+  private func unSelectMarker() {
     if (selectedMarker != nil) {
       selectedMarker?.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: false, strokeWidth: CGFloat(0.5))
+      selectedMarker = nil
     }
   }
   
   private func setSelectedMarker(marker: GMSMarker) {
-    resetSelectedMarker()
+    unSelectMarker()
     
     selectedMarker = marker
     marker.icon = Styles.imageOfBoatIcon(imageSize: CGSize(width: 28, height: 30),  selected: true, strokeWidth: CGFloat(0.5))
+  }
+  
+  private func cleanupPlacemarkers() {
+    for marker in placemarkers {
+      marker.map = nil
+    }
+    placemarkers.removeAll()
+    searchResultsPlacemarks.removeAll()
   }
 }
 
 extension MapViewController: GMSMapViewDelegate {
   func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
     
-    //hide infowindow
+    //hide infowindow (don't let it show)
     mapView.selectedMarker = nil
+    
+    cleanupPlacemarkers()
     
     //show collection view
     if (!collectionViewShowing) {
@@ -187,10 +213,9 @@ extension MapViewController: GMSMapViewDelegate {
     queryService.getPlaceholdersFor(adventureId: adventureId) { results, errorMessage in
       
       if let results = results {
-        self.placemarks = results
+        self.searchResultsPlacemarks = results
         print("Total placemarkers \(results.count)")
-        //self.mapView.clear()
-        //self.loadResultsInMap()
+        self.loadPlacemarkersInMap()
       }
       
       if !errorMessage.isEmpty {
@@ -210,6 +235,7 @@ extension MapViewController: GMSMapViewDelegate {
     return true;
   }
   
+  //This should not hit becuase I'm hiding the info window by not having a "selected" marker on the map, tracking outside of maps
   func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
     print("didTapInfoWindowOf")
   }
@@ -228,9 +254,14 @@ extension MapViewController: GMSMapViewDelegate {
       
       if let results = results {
         self.searchResults = results
-        self.mapView.clear()
-        self.loadResultsInMap()
-        self.adventureCollectionView.reloadData()
+        
+        if results.count > 0 {
+          self.mapView.clear()
+          self.loadResultsInMap()
+          self.loadPlacemarkersInMap()
+          self.adventureCollectionView.reloadData()
+        }
+        
       }
       
       if !errorMessage.isEmpty {
@@ -244,8 +275,9 @@ extension MapViewController: GMSMapViewDelegate {
     print("didTapAt")
     if (collectionViewShowing) {
       hideCollectionView()
-      resetSelectedMarker()
     }
+    unSelectMarker()
+    cleanupPlacemarkers()
   }
 }
 
